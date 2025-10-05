@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Paper, Grid } from '@mui/material';
+import { Container, Typography, Paper, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({

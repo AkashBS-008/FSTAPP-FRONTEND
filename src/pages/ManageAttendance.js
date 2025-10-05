@@ -27,7 +27,7 @@ const ManageAttendance = () => {
     const dispatch = useDispatch();
     const { activities } = useSelector((state) => state.activities);
     const { volunteers } = useSelector((state) => state.volunteers);
-    const { attendance, isLoading, error } = useSelector((state) => state.attendance);
+    const { isLoading, error } = useSelector((state) => state.attendance);
     const [selectedActivityId, setSelectedActivityId] = useState('');
     const [attendanceData, setAttendanceData] = useState({});
     const [saveSuccess, setSaveSuccess] = useState(false);

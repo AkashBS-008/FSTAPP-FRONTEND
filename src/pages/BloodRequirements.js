@@ -26,7 +26,6 @@ const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 const BloodRequirements = () => {
     const dispatch = useDispatch();
     const { requirements, isLoading } = useSelector((state) => state.bloodRequirements);
-    const { user } = useSelector((state) => state.auth);
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         recipientName: '',

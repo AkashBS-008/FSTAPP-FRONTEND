@@ -35,7 +35,7 @@ const initialFormData = {
 };
 
 const ManageBloodRequirements = () => {
-    const { requirements, isLoading, error } = useSelector((state) => state.bloodRequirements);
+    const { requirements } = useSelector((state) => state.bloodRequirements);
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState(initialFormData);
 
