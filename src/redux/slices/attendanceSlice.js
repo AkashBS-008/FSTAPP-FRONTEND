@@ -10,7 +10,7 @@ const initialState = {
 export const fetchAttendance = createAsyncThunk(
     'attendance/fetchAttendance',
     async () => {
-        const response = await axios.get('http://localhost:5000/api/attendance');
+        const response = await axios.get('https://fstapp-backend.vercel.app/api/attendance');
         return response.data;
     }
 );
@@ -19,7 +19,7 @@ export const markAttendance = createAsyncThunk(
     'attendance/markAttendance',
     async (data, { getState }) => {
         const { auth } = getState();
-        const response = await axios.post('http://localhost:5000/api/attendance', data, {
+        const response = await axios.post('https://fstapp-backend.vercel.app/api/attendance', data, {
             headers: { Authorization: `Bearer ${auth.token}` }
         });
         return response.data;
@@ -30,7 +30,7 @@ export const fetchActivityAttendance = createAsyncThunk(
     'attendance/fetchActivityAttendance',
     async (activityId, { getState }) => {
         const { auth } = getState();
-        const response = await axios.get(`http://localhost:5000/api/attendance/activity/${activityId}`, {
+        const response = await axios.get(`https://fstapp-backend.vercel.app/api/attendance/activity/${activityId}`, {
             headers: { Authorization: `Bearer ${auth.token}` }
         });
         return response.data;

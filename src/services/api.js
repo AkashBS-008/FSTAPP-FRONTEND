@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://fstapp-backend.vercel.app/api';
 
 // Add auth token to requests
 axios.interceptors.request.use(

@@ -25,7 +25,7 @@ const MyAttendance = () => {
     useEffect(() => {
         const fetchAttendance = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/attendance/user/${user.id}`);
+                const response = await axios.get(`https://fstapp-backend.vercel.app/api/attendance/user/${user.id}`);
                 setAttendance(response.data);
                 setIsLoading(false);
             } catch (err) {

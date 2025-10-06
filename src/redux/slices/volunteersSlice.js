@@ -6,7 +6,7 @@ export const fetchVolunteers = createAsyncThunk(
     'volunteers/fetchVolunteers',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get('http://localhost:5000/api/users/volunteers');
+            const response = await axios.get('https://fstapp-backend.vercel.app/api/users/volunteers');
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data || { message: 'Failed to fetch volunteers' });
@@ -18,7 +18,7 @@ export const createVolunteer = createAsyncThunk(
     'volunteers/createVolunteer',
     async (data, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/users/register', {
+            const response = await axios.post('https://fstapp-backend.vercel.app/api/users/register', {
                 ...data,
                 role: 'volunteer'
             });
@@ -33,7 +33,7 @@ export const updateVolunteer = createAsyncThunk(
     'volunteers/updateVolunteer',
     async ({ id, data }, { rejectWithValue }) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/users/${id}`, data);
+            const response = await axios.put(`https://fstapp-backend.vercel.app/api/users/${id}`, data);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);
@@ -45,7 +45,7 @@ export const deleteVolunteer = createAsyncThunk(
     'volunteers/deleteVolunteer',
     async (id, { rejectWithValue }) => {
         try {
-            await axios.delete(`http://localhost:5000/api/users/${id}`);
+            await axios.delete(`https://fstapp-backend.vercel.app/api/users/${id}`);
             return id;
         } catch (error) {
             return rejectWithValue(error.response.data);

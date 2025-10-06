@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
         return rejectWithValue({ message: 'Email and password are required' });
       }
       
-      const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
+      const response = await axios.post('https://fstapp-backend.vercel.app/api/auth/login', credentials);
       const { token, user } = response.data;
       
       if (!token || !user) {
